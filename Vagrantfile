@@ -53,7 +53,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", path: "./vagrant-shell/provision.sh"
 
   # Enable provisioning of OpenVSwitch with a shell script.
-  #config.vm.provision "shell", path: "./vagrant-shell/openvswitch.sh"
+  config.vm.provision "shell", path: "./vagrant-shell/openvswitch.sh"
 
   # Enable provisioning of docker with a shell script.
   config.vm.provision "shell", path: "./vagrant-shell/docker.sh"
