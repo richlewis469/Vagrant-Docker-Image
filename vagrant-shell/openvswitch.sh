@@ -18,19 +18,19 @@ yum install python python-twisted-core python-zope-interface python-six \
 
 cd /usr/local/src
 
-wget http://openvswitch.org/releases/openvswitch-2.8.1.tar.gz
+wget http://openvswitch.org/releases/openvswitch-2.9.0.tar.gz
 mkdir -p $HOME/rpmbuild/SOURCES
-cp openvswitch-2.8.1.tar.gz $HOME/rpmbuild/SOURCES
-tar xvf openvswitch-2.8.1.tar.gz
+cp openvswitch-2.9.0.tar.gz $HOME/rpmbuild/SOURCES
+tar xvf openvswitch-2.9.0.tar.gz
 mkdir -p $HOME/rpmbuild/SPECS
-cp openvswitch-2.8.1/rhel/*.spec ~/rpmbuild/SPECS
+cp openvswitch-2.9.0/rhel/*.spec ~/rpmbuild/SPECS
 cd $HOME/rpmbuild/SPECS
 rpmbuild -ba openvswitch.spec
 
-yum localinstall $HOME/rpmbuild/RPMS/x86_64/openvswitch-2.8.1-1.x86_64.rpm --assumeyes
-yum localinstall $HOME/rpmbuild/RPMS/x86_64/openvswitch-devel-2.8.1-1.x86_64.rpm --assumeyes
-yum localinstall $HOME/rpmbuild/RPMS/x86_64/openvswitch-debuginfo-2.8.1-1.x86_64.rpm --assumeyes
-yum localinstall $HOME/rpmbuild/RPMS/noarch/openvswitch-selinux-policy-2.8.1-1.noarch.rpm --assumeyes
+yum localinstall $HOME/rpmbuild/RPMS/x86_64/openvswitch-2.9.0-1.x86_64.rpm --assumeyes
+yum localinstall $HOME/rpmbuild/RPMS/x86_64/openvswitch-devel-2.9.0-1.x86_64.rpm --assumeyes
+yum localinstall $HOME/rpmbuild/RPMS/x86_64/openvswitch-debuginfo-2.9.0-1.x86_64.rpm --assumeyes
+yum localinstall $HOME/rpmbuild/RPMS/noarch/openvswitch-selinux-policy-2.9.0-1.noarch.rpm --assumeyes
 
 echo "BRCOMPAT=yes" >> /etc/sysconfig/openvswitch
 
