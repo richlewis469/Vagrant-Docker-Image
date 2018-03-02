@@ -59,6 +59,6 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", path: "./vagrant-shell/docker.sh"
 
   # Enable provisioning of Demo with a shell script.
-  config.vm.provision "shell", path: "./vagrant-shell/demo.sh"
+  #config.vm.provision "shell", path: "./vagrant-shell/demo.sh"
 
 end
