@@ -46,6 +46,14 @@ Vagrant.configure("2") do |config|
   config.vm.box_url = "http://yum.oracle.com/boxes/oraclelinux/ol74/ol74.box"
   config.vm.box = "ol74"
 
+  config.vm.provider "virtualbox" do |vb|
+    vb.memory = 8192
+    vb.cpus = 2
+    # Change the network adapter to promiscuous mode
+    vb.customize ['modifyvm', :id, '--nicpromisc1', 'allow-all']
+    vb.customize ['modifyvm', :id, '--nicpromisc2', 'allow-all']
+  end
+
   # Share an additional folder to the guest VM, default is "share" in the current directory.
   config.vm.synced_folder "vagrant-share", "/vagrant-share"
 
@@ -53,12 +61,14 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", path: "./vagrant-shell/provision.sh"
 
   # Enable provisioning of OpenVSwitch with a shell script.
-  config.vm.provision "shell", path: "./vagrant-shell/openvswitch.sh"
+  #config.vm.provision "shell", path: "./vagrant-shell/openvswitch.sh"
 
   # Enable provisioning of docker with a shell script.
   config.vm.provision "shell", path: "./vagrant-shell/docker.sh"
 
   # Enable provisioning of Demo with a shell script.
   #config.vm.provision "shell", path: "./vagrant-shell/demo.sh"
+
+  config.vm.provision "shell", path: "./vagrant-shell/ipv6-test.sh"
 
 end
