@@ -31,7 +31,7 @@
     <br>IPv6 Address: <b>2001:db8::/64</b>
     <br><?php echo "Local Time: <b>"; print strftime('%c'); echo "</b>"; ?>
     <br>
-    <br><?php echo "Server Container IP Address: <b>$_SERVER[SERVER_ADDR]</b>"; ?>
+    <br><?php echo "Container IP Address: <b>$_SERVER[SERVER_ADDR]</b>"; ?>
     <br><?php echo "Client IP Address: <b>$_SERVER[REMOTE_ADDR]</b>"; ?>
   </td>
 </table></center>
