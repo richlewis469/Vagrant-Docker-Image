@@ -47,7 +47,7 @@ Vagrant.configure("2") do |config|
   config.vm.box = "ol74"
 
   config.vm.provider "virtualbox" do |vb|
-    vb.memory = 8192
+    vb.memory = 2048
     vb.cpus = 2
     # Change the network adapter to promiscuous mode
     vb.customize ['modifyvm', :id, '--nicpromisc1', 'allow-all']
@@ -67,7 +67,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", path: "./vagrant-shell/docker.sh"
 
   # Enable provisioning of Demo with a shell script.
-  #config.vm.provision "shell", path: "./vagrant-shell/demo.sh"
+  config.vm.provision "shell", path: "./vagrant-shell/demo.sh"
 
   config.vm.provision "shell", path: "./vagrant-shell/ipv6-test.sh"
 
