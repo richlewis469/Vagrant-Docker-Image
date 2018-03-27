@@ -27,8 +27,8 @@
     This IPv6 test target is a docker container.
     <br>
     <br><?php echo "Hostname: <b>$_SERVER[HOSTNAME]</b>"; ?>
-    <br>IPv4 Address: <b>192.168.0.0/24</b>
-    <br>IPv6 Address: <b>2001:db8::/64</b>
+    <br>IPv4 Address: <b>MyIPv4AddrVar/24</b>
+    <br>IPv6 Address: <b>MyIPv6AddrVar/64</b>
     <br><?php echo "Local Time: <b>"; print strftime('%c'); echo "</b>"; ?>
     <br>
     <br><?php echo "Container IP Address: <b>$_SERVER[SERVER_ADDR]</b>"; ?>
