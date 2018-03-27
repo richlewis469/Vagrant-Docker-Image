@@ -43,16 +43,12 @@ ip addr show dev $INTER
 
 systemctl start docker
 
+echo "ipv6-test: Executing Docker Pull"
 docker pull $IMAGE
-
-echo "ipv6-test: Copy the HTML Files"
-mkdir -p /var/www/html
-cp -r /vagrant-share/www/* /var/www/html
-sed -i 's/MyIPv4AddrVar/'$IPV4ADDR'/' /var/www/html/index.php
-sed -i 's/MyIPv6AddrVar/'$IPV6ADDR'/' /var/www/html/index.php
 
 echo "ipv6-test: Executing Docker Run"
 CMD="docker run -d -t \
+  -v /vagrant-share/www:/var/www/html \
   --name ${CLIENT} \
   --hostname ${CLIENT}.lab.net \
   -p ${IPV4ADDR}:80:80 \
