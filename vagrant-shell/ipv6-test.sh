@@ -95,6 +95,11 @@ iptables  -t nat -L
 echo "-----"
 ip6tables -t nat -L
 
+echo " "
+echo "Test Target is running on IPv4 at http://${IPV4ADDR}:80"
+echo "Test Target is running on IPv6 at http://[${IPV6ADDR}]:80"
+echo " "
+
 date +"%F %T"
 echo "Exiting IPv6-Test"
 echo " "
