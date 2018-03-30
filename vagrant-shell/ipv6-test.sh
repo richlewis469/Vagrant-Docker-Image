@@ -9,17 +9,21 @@ sysctl net.ipv4.ip_forward=1
 sysctl net.ipv4.conf.all.forwarding=1
 sysctl net.ipv6.conf.default.forwarding=1
 sysctl net.ipv6.conf.all.forwarding=1
+#sysctl net.ipv6.conf.all.accept_ra=2
 
 sysctl -w net.ipv4.ip_forward=1
 sysctl -w net.ipv4.conf.all.forwarding=1
 sysctl -w net.ipv6.conf.default.forwarding=1
 sysctl -w net.ipv6.conf.all.forwarding=1
+#sysctl -w net.ipv6.conf.all.accept_ra=2
+
 
 cat >> /etc/sysctl.conf << EOF
 net.ipv4.ip_forward=1
 net.ipv4.conf.all.forwarding=1
 net.ipv6.conf.default.forwarding=1
 net.ipv6.conf.all.forwarding=1
+#sysctl net.ipv6.conf.all.accept_ra=2
 EOF
 
 # Enable IPv6 Support per https://docs.docker.com/config/daemon/ipv6/
