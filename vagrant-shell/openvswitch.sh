@@ -51,6 +51,8 @@ NETMASK=`ifconfig eth1 | grep inet | awk '{print $4}' | head -1`
 GATEWAY=`netstat -rn | grep UG | awk '{print $2}'`
 
 ifconfig eth1 0
+# or use ip addr dev
+
 ovs-vsctl add-br ovsbr0
 ovs-vsctl add-port ovsbr0 eth1
 ifconfig ovsbr0 $ADDR netmask $NETMASK
